@@ -1,0 +1,49 @@
+{
+    "name": "vue-storage-plus",
+    "version": "2.0.0",
+    "description": "1. npm install\r 2. jest test.js",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-jest": "^22.4.3",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-dynamic-import-node": "^2.0.0",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-2": "^6.24.1",
+        "codecov": "^3.6.1",
+        "coveralls": "^3.0.2",
+        "jest": "^22.4.3",
+        "webpack": "^4.8.3"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "jest ./test.js"
+    },
+    "keywords": [
+        "vue-storage",
+        "storage",
+        "vue",
+        "localStorage",
+        "sessionStorage",
+        "memory Storage"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microlv/vue-storage-plus.git"
+    },
+    "author": "andy.lv@live.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/microlv/vue-storage-plus/issues"
+    },
+    "jest": {
+        "coverageDirectory": "./coverage/",
+        "collectCoverage": true
+    },
+    "homepage": "https://github.com/microlv/vue-storage-plus#readme"
+}

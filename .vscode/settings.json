@@ -1,0 +1,27 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Monokai",
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    // Enable per-language
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "editor.detectIndentation": true,
+    "vetur.format.defaultFormatter.js": "prettier",
+    "vetur.format.defaultFormatter.html": "none",
+    "vetur.format.defaultFormatter.less": "none",
+    "vetur.format.defaultFormatter.css": "none",
+    "eslint.enable": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "eslint.options": {
+        "configFile": ".eslintrc.js"
+    },
+    "css.fileExtensions": ["css", "scss", "less", "sass"],
+    "workbench.colorCustomizations": {
+        "editorIndentGuide.activeBackground": "#fcf591"
+    }
+}

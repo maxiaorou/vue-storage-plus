@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- 8.9.1
+install:
+- npm install -g codecov
+- npm install
+script:
+# - jest --coverage
+# - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+# - codecov
+- jest && codecov
+env:
+  global:
+    secure: NFlXebGZ/SNnQbWBkE7fPKZ7qJPy96WOnY2yhZelbO2uLRWUWlQMRgvdfMdj0kOuaORQotG+udNEuIrblqXFmiaZq3NJ8F/KjircjUUeMtSXr93rtWEntBAS8SU+o88iuzc2QSlw7MrXkUTieRhBbc7NkuEkOnvypbSJbFh0kRePECJOFJuYe22iVXZ5IR55g5wKxcUH6jIM4YC7pNLXw/bdXfzeAzkkD+tTSgMndBbMuFoUvNCizlHaxY4qTzq02Xorjh279bdtBlVHdhnSpPUI7JzkTanCcGnypybKt+7iVtlRyUFrMXJYSGVAyaODiTWFWdiwB9Rwa2d6LfvnnNF7iq3MijFgoxO0d7BKPP8zUwp8GdxyG0SeRfum6tO5ptVAUdkVVtjpJghlua5VvX8TXx4sm6L5kYwQtu8jzMlJ4oPCEGxrjELH5NOz0z+MWd/TtG1dS6l1dvDeCa6/g9WcG52WShTihvGRn2rBfSTBJaTbn94hpFQly7ZqQ8gwD0eW32wvzxdrrVbHbBMFT4l4UdamvQ09bIs7WltpyDMq0tLib4fVKkLtQrzX20u9xSr/ct7a7hMcLRNE05fDaV3DDougGuMQxngo/mZweZuNJMyrVppwrRJ52Zm13Yus+N3zVXZK/z+0FA9fRTq4a7JOzMmrnAXkH9m+V2qKLug=
