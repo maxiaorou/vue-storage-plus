@@ -1,6 +1,6 @@
 import { Factory, LocalStorage, SessionStorage, install } from '../index';
 
-describe('entry test', () => {
+describe('entry point case', () => {
     it('Test: create different entry', () => {
         let storage = Factory.getLocal();
         let storage2 = new LocalStorage();

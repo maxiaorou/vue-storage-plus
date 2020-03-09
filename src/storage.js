@@ -7,21 +7,29 @@ class Storage {
         this.storage = props || localStorage;
     }
 
-    [getDefaultValue](type) {
-        /* eslint-disable indent */
-        switch (type) {
-            case String:
-                return '';
-            case Object:
-                return {};
-            case Array:
-                return [];
-            case Number:
-                return 0;
-            case Boolean:
-                return false;
+    [getDefaultValue](def) {
+        //兼容旧1.0.3接口，使用构建函数的默认值
+        if (typeof def === 'function') {
+            /* eslint-disable indent */
+            switch (def) {
+                case String:
+                    def = '';
+                    break;
+                case Object:
+                    def = {};
+                    break;
+                case Array:
+                    def = [];
+                    break;
+                case Number:
+                    def = 0;
+                    break;
+                case Boolean:
+                    def = false;
+                    break;
+            }
         }
-        return '';
+        return def;
     }
 
     [getItemFunc](key, def) {
@@ -29,23 +37,22 @@ class Storage {
         let obj;
         if (str === '' || !str) {
             //返回默认值
-            return def;
+            return this[getDefaultValue](def);
         }
 
         try {
-            obj = JSON.parse(str); //this[trycatch](() => { return JSON.parse(str); });
+            obj = JSON.parse(str);
         } catch (error) {
             obj = str;
             // throw new Error(`vue-storage error: your storage value is wrong! { key: ${key}, value: ${str} }`);
         }
-        return [null, undefined].indexOf(obj) >= 0 ? def : obj;
+        return [null, undefined].indexOf(obj) >= 0 ? this[getDefaultValue](def) : obj;
     }
 
     [setItemFunc](key, val) {
         let str = val;
-        //考虑支持[{},{}]
         if (typeof val !== 'string') {
-            str = JSON.stringify(val); //this[trycatch](() => { return JSON.stringify(val); });
+            str = JSON.stringify(val);
         }
         this.storage.setItem(key, str);
     }
@@ -62,7 +69,6 @@ class Storage {
             });
             return;
         }
-        //set('a', {});
         this[setItemFunc](key, val);
     }
 

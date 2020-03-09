@@ -1,6 +1,6 @@
 import Factory from '../factory';
 
-describe('delete data', () => {
+describe('delete case', () => {
     it('Test: delete one key storage', () => {
         let storage = Factory.getLocal();
         storage.set('arr', [3, 4, 5]);
@@ -74,6 +74,7 @@ describe('delete data', () => {
         expect(storage.get('boo', false)).toEqual(false);
         expect(storage.get('str', '')).toEqual('');
         expect(storage.get('obj', {})).toEqual({});
+        expect(storage.get('obj', { name: 'e' })).toEqual({ name: 'e' });
         expect(storage.get('del')).toEqual('');
     });
 });

@@ -1,6 +1,6 @@
 import Factory from '../factory';
 
-describe('write and read', () => {
+describe('write/read feature case', () => {
     it('Test: Feature: special key&value is array', () => {
         let storage = Factory.getLocal();
         storage.clear();

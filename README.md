@@ -35,12 +35,21 @@ storage.set('A', [3, 4, 5]);
 //set A=[1, 2, 3], B=true, C='test'
 storage.set(['A', 'B', 'C'], [[1, 2, 3], true, 'test']);
 ```
-## get(key, ?default='')
+## get(key, ?default=any_value)
 get the key value from storage
 
 if ?type is exist, where storage data is null or undefined, then return the default value of type
 
 if ?default is exist, if the read key does not exist or  storage data is null or undefined, output the default value.
+
+## get(key, ?default=Array|Boolean|Object|String|Number)
+same function as get(key, ?default=any_value)
+ - Array = []
+ - Boolean = false
+ - Object = {}
+ - String = ''
+ - Number = 0
+
 ```js
 //clear data first.
 this.$storage.clear();
@@ -54,6 +63,29 @@ this.$storage.get(['C','D'], [false, 'default']);
 this.$storage.set(['E', 'F', 'G'], [[1, 2, 3], true]);
 let res = this.$storage.get(['E','F','G']); //res={E:[1, 2, 3],F:true,G:''}
 let [E,F] = [...res];
+
+this.$storage.get('C', Array) //if C is null, return [];
+this.$storage.get('H', Object) //if H is null, return {};
+```
+## using by window
+open Api:
+- window.$ls
+- window.$storage
+- window.$localStorage
+- window.$ss
+- window.$sessionStorage
+```js
+import { install as storageInstall } from 'vue-storage-plus';
+Vue.use(storageInstall);
+
+window.$ls.set('A', true);
+window.$ls.get('A'); //true
+window.$ls.get('B', 'B'); //return 'B'
+window.$localStorage.get('E', 'E'); //return 'E'
+
+window.$ss.get('C', 'C'); //return 'C'
+window.$sessionStorage.get('D', 'D'); //return 'D'
+
 ```
 
 ### vue project using

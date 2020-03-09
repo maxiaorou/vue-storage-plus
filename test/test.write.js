@@ -1,6 +1,6 @@
 import Factory from '../factory';
 
-describe('write and read', () => {
+describe('write case', () => {
     it('Test: get not exist data and return ""', () => {
         let storage = Factory.getLocal();
         storage.clear();

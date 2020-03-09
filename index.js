@@ -1,4 +1,5 @@
 import { Factory, LocalStorage, SessionStorage } from './factory';
+import config from './package.json';
 
 if (!window.localStorage) {
     console.error('only support web browser');
@@ -16,12 +17,13 @@ const install = VUE => {
 };
 
 if (window) {
+    ls.version = config.version;
+    ss.version = config.version;
+
     window.$ls = ls;
     window.$ss = ss;
 }
 
-let expObj = { Factory, LocalStorage, SessionStorage, install, ls, ss };
-
-export default expObj;
+export default { Factory, LocalStorage, SessionStorage, install, ls, ss };
 
 export { Factory, LocalStorage, SessionStorage, install, ls, ss };

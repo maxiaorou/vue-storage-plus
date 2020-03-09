@@ -1,7 +1,7 @@
 import Factory from '../factory';
 import { LocalStorage, SessionStorage } from '../index';
 
-describe('new Object', () => {
+describe('new case', () => {
     it('Test: create new LocalStorage', () => {
         let storage = new LocalStorage();
         let storage1 = new LocalStorage();
