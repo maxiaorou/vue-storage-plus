@@ -1,5 +1,4 @@
 import { Factory, LocalStorage, SessionStorage } from './factory';
-import config from './package.json';
 
 if (!window.localStorage) {
     console.error('only support web browser');
@@ -17,8 +16,7 @@ const install = VUE => {
 };
 
 if (window) {
-    ls.version = config.version;
-    ss.version = config.version;
+    ls.version = ss.version = '2.0.3';
 
     window.$ls = ls;
     window.$ss = ss;
