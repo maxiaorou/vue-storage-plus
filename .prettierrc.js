@@ -4,7 +4,7 @@ module.exports = {
     printWidth: 165,
     tabWidth: 4,
     //转换器javascript
-    parser: 'babylon',
+    // parser: 'babylon',
     //未位分号
     semi: true,
     //未位逗号

@@ -5,14 +5,14 @@ if (!window.localStorage) {
     console.error('only support web browser');
 }
 
-let ls = Factory.create('local');
-let ss = Factory.create('session');
+let ls = Factory.getLocal();
+let ss = Factory.getSession();
 
 const install = VUE => {
     VUE.prototype.$storage = ls;
     VUE.prototype.$localStorage = ls;
-    VUE.prototype.$ls = ls;
     VUE.prototype.$sessionStorage = ss;
+    VUE.prototype.$ls = ls;
     VUE.prototype.$ss = ss;
 };
 

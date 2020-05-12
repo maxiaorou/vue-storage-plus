@@ -58,9 +58,9 @@ describe('new case', () => {
         expect(storage.get('boo', '')).toEqual(storage1.get('boo', ''));
     });
 
-    it("Test: use Factory.create('local')", () => {
-        let storage = Factory.create('local');
-        let storage1 = Factory.create('local');
+    it("Test: use Factory.getLocal()", () => {
+        let storage = Factory.getLocal();
+        let storage1 = Factory.getLocal();
 
         storage.clear();
         storage.set('num', 210);
@@ -72,9 +72,9 @@ describe('new case', () => {
         expect(storage.get('boo')).toEqual(storage1.get('boo'));
     });
 
-    it("Test: use Factory.create('session')", () => {
-        let storage = Factory.create('session');
-        let storage1 = Factory.create('session');
+    it("Test: use Factory.getSession()", () => {
+        let storage = Factory.getSession();
+        let storage1 = Factory.getSession();
 
         storage.clear();
         storage.set('num', 210);
